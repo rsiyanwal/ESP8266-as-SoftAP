@@ -53,7 +53,7 @@ void setup() {
   The third parameter is the WiFi channel. The fourth parameter, which is called hidden, is set to true if we want to hide the SSID (name) 
   of the WiFi from other devices. The fifth parameter, max-connections, lets us set the maximum number of devices that can connect to the WiFi. 
   In this code, we have used only the first three parameters. 
-  You can find the list of methods in the ESP8266WebServer.h library at these links: [here](https://links2004.github.io/Arduino/d3/d58/class e s p8266 web server.html) and [here](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WebServer).
+  You can find the list of methods in the ESP8266WebServer.h library at these links: [here](https://links2004.github.io/Arduino/d3/d58/class_e_s_p8266_web_server.html) and [here](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WebServer).
   */
   WiFi.softAP(ssid, password, channel);
   // You can remove the password parameter if you want Soft-AP to be open.
