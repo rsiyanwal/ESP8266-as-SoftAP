@@ -1,60 +1,10 @@
+/* This code sets up a simple HTTP server using the ESP8266 microcontroller and the ESP8266WebServer library. 
+The code creates a WiFi access point with the SSID "ESP-SoftAP" and a password "thereisnospoon". 
+When a client connects to the access point and browses to http://192.168.4.1, the handleRoot function sends a 
+response with the text "You are connected". The server starts listening on port 80 and waits for incoming 
+client connections. The loop function handles incoming client requests and responses. */
+
 /* Including the libraries */
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WebServer.h>
-
-/*
-/*
-//#ifndef APSSID
-#define APSSID "ESP_Wifi_01"
-#define APPSK "123456"
-//#endif
-
-/* Setting the Credentials 
-const char *ssid = APSSID;
-const char *password = APPSK;
-
-
-ESP8266WebServer server(80);
-
-/* Go to http://198.168.4.1 
-void handleRoot(){
-  server.send(200, "text/html", "<h1>Hi! You're Connected.</h1>");
-}
-
-/* Run Once 
-void setup() {
-  Serial.begin(115200);
-  Serial.println();
-  Serial.print("Configuring access point...");
-
-  //We can remove the password parameter if we want the AP to be open
-  //boolean result = WiFi.softAP(ssid, password);
-  boolean result = WiFi.softAP("ESP_Wifi_01", "pass");  
-  if(result == true){
-    Serial.println("Ready");
-  }else{
-    Serial.println("Failed");
-  }
-
-  IPAddress myIP = WiFi.softAPIP();
-  Serial.print("AP IP Address: ");
-  Serial.println(myIP);
-  server.on("/", handleRoot);
-  server.begin();
-  Serial.println("HTTP Server Started");
-  
-}
-
-/* Runs in a Loop 
-void loop() {
-  Serial.printf("Stations Connected = %d\n", WiFi.softAPgetStationNum());
-  server.handleClient();
-  delay(3000);
-
-}
-*/
-
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
@@ -83,8 +33,8 @@ void setup() {
   Serial.println();
   Serial.print("Configuring access point...");
   /* You can remove the password parameter if you want the AP to be open. */
-  WiFi.softAP(ssid, NULL, 1);
-  //WiFi.softAP(ssid, password, 1);
+  //WiFi.softAP(ssid, NULL, 1);
+  WiFi.softAP(ssid, password, 1);
 
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
